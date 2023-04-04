@@ -1,1 +1,3 @@
-# java-aws-messaging
+# Spring Cloud AWS
+
+### Aws sqs listener
