@@ -7,24 +7,41 @@
     <groupId>br.rossiter.aws</groupId>
     <artifactId>java-aws-sqs-listener</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <name>java-aws-sqs-listener</name>
+    <description>Aws Sqs listener</description>
 
     <build>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>br.rossiter.aws.SpringCloudAwsApplication</mainClass>
+                    <layout>JAR</layout>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>12</source>
-                    <target>12</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
         </plugins>
     </build>
 
-    <name>java-aws-sqs-listener</name>
-    <description>Aws Sqs listener</description>
     <properties>
         <java.version>11</java.version>
+        <start-class>br.rossiter.aws.SpringCloudAwsApplication</start-class>
     </properties>
 
     <dependencies>
